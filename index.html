@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="invoice-container">
+
+        <!-- Header Section -->
+        <div class="header">
+            <!-- Logo Upload (Circle with Plus Icon) -->
+            <div id="logo-container">
+                <img id="invoice-logo" src="" alt="Invoice Logo">
+                <span class="plus-icon">+</span>
+            </div>
+            <input type="file" id="logo-upload" accept="image/*" style="display: none;">
+
+            <h1><input type="text" placeholder="Business Name"></h1>
+        </div>
+
+        <!-- Invoice Details Section -->
+        <div class="invoice-details">
+            <div class="invoice-item">
+                <label for="invoice-number">Invoice Number</label>
+                <input type="text" id="invoice-number" placeholder="12345">
+            </div>
+            <div class="invoice-item">
+                <label for="invoice-date">Invoice Date</label>
+                <input type="date" id="invoice-date" placeholder="MM/DD/YYYY">
+            </div>
+            <div class="invoice-item">
+                <label for="due-date">Due Date</label>
+                <input type="date" id="due-date" placeholder="MM/DD/YYYY">
+            </div>
+        </div>
+
+        <!-- Customer Details Section -->
+        <div class="customer-section">
+            <div class="customer-item">
+                <label for="customer-name">Customer Name</label>
+                <input type="text" id="customer-name" placeholder="Customer Name">
+            </div>
+            <div class="customer-item">
+                <label for="customer-email">Customer Email</label>
+                <input type="text" id="customer-email" placeholder="customer@example.com">
+            </div>
+            <div class="customer-item">
+                <label for="customer-phone">Customer Phone</label>
+                <input type="text" id="customer-phone" placeholder="123-456-7890">
+            </div>
+        </div>
+
+        <!-- Item Table Section -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Description</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+
+        <!-- Add Row Button -->
+        <button id="addRow">Add Item</button>
+
+        <!-- Summary Section -->
+        <div class="summary">
+
+            <div class="summary-row">
+                <div class="label">Tax (%)</div>
+                <div class="input"><input type="text" class="tax" placeholder="0"></div>
+                <div class="label">Subtotal</div>
+                <div class="input"><span class="subtotal-value">0.00</span></div>
+            </div>
+
+            <div class="summary-row">
+                <div class="label">Discount (%)</div>
+                <div class="input"><input type="text" class="discount" placeholder="0"></div>
+                <div class="label">Total</div>
+                <div class="input"><span class="total-value">0.00</span></div>
+            </div>
+
+            <div class="summary-row">
+                <div class="label">Shipping Cost</div>
+                <div class="input"><input type="text" class="shipment-cost" placeholder="0.00"></div>
+                <div class="label">Balance Due</div>
+                <div class="input"><span class="balance-due">0.00</span></div>
+            </div>
+
+            <div class="summary-row">
+                <div class="label">Amount Paid</div>
+                <div class="input"><input type="text" class="amount-paid" placeholder="0.00"></div>
+                <div class="label"></div>
+                <div class="input">
+                    <span></span></div>
+            </div>
+
+        </div>
+
+        <!-- Payment Terms Section -->
+        <div class="payment-terms">
+            <label for="payment-terms">Payment Terms</label>
+            <div><input type="text" id="payment-terms" placeholder="Due on receipt"></div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="buttons">
+            <button id="print-invoice">Print Invoice</button>
+            <button id="save-invoice">Save Invoice</button>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+</html>

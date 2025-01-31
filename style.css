@@ -1,0 +1,280 @@
+/* Basic Layout */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.invoice-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+/* Logo container (circle) */
+
+#logo-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+
+/* Plus icon inside the circle */
+
+#logo-container .plus-icon {
+    font-size: 30px;
+    color: #555;
+}
+
+
+/* Uploaded logo styles */
+
+#invoice-logo {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+    position: absolute;
+}
+
+
+/* When logo is uploaded, hide plus icon */
+
+#logo-container.uploaded .plus-icon {
+    display: none;
+}
+
+
+/* Hide the file input */
+
+#logo-upload {
+    display: none;
+}
+
+
+/* Invoice Title */
+
+h1 {
+    margin: 10px 0 0 0;
+    font-size: 18px;
+}
+
+h1 input {
+    border: none;
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+
+/* Invoice Details */
+
+.invoice-details,
+.customer-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.invoice-item,
+.customer-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+
+/* Labels */
+
+.invoice-details label,
+.customer-section label,
+.summary p,
+.payment-terms label {
+    font-size: 12px;
+    margin: 5px 0;
+    text-align: left;
+    font-weight: normal;
+}
+
+
+/* Input Fields */
+
+.invoice-details input,
+.customer-section input,
+.summary input {
+    padding: 5px;
+    font-size: 12px;
+    width: 100px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+/* Summary Section Input Adjustments */
+
+.summary input.tax,
+.summary input.discount,
+.summary input.shipment-cost,
+.summary input.amount-paid {
+    width: 80px;
+}
+
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* Buttons */
+
+button {
+    padding: 5px 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+#addRow {
+    margin-top: 10px;
+    background: green;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#saveButton {
+    background-color: blue;
+}
+
+#printButton {
+    background-color: orange;
+    margin-left: 10px;
+}
+
+
+/* Summary Section */
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-row .label {
+    font-size: 12px;
+    text-align: left;
+    font-weight: normal;
+    width: 30%;
+}
+
+.summary-row .input {
+    width: 60%;
+}
+
+.summary input {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .summary-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .summary-row .label,
+    .summary-row .input {
+        width: 100%;
+    }
+    .summary input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .invoice-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+    input {
+        font-size: 14px;
+    }
+    button {
+        font-size: 14px;
+    }
+    table th,
+    table td {
+        font-size: 10px;
+    }
+}
+
+
+/* Print styling */
+
+@media print {
+    #print-invoice,
+    #save-invoice,
+    #logo-upload {
+        display: none;
+    }
+    #invoice-logo {
+        display: block !important;
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+}
